@@ -35,6 +35,10 @@ header {
   line-height: 50px;
 }
 
+nav {
+  display: none;
+}
+
 .banner {
   position: relative;
   width: 100%;
@@ -125,25 +129,23 @@ about-wrapper {
 }
 
 .person-img {
-  width: 70%;
-  height: 70%;
+  width: 225px;
+  height: 225px;
   padding: 10%;
 }
 
-.person-data > h3 {
-  font-weight: bold;
+.person-data-left > h3, .person-data-right > h3 {
   text-align: left;
 }
 
-.person-data > h3,
-p {
+.person-data-left > h3, p, .person-data-right > h3, p {
   font-size: 18px;
   line-height: 21px;
 }
 
-.person-data > p {
+.person-data-left > p, .person-data-right > p {
   text-align: justify;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 #offer {
@@ -178,7 +180,7 @@ p {
   height: 193.78px;
   background-color: rgba(241, 241, 241, 1);
   padding: 10px;
-  margin: 30px;
+  margin: 5%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,6 +233,36 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+  }
+
+  nav {
+    display: block;
+    position: relative;
+    padding-right: 5%;
+  }
+
+  .nav-links li {
+    display: inline-block;
+    padding: 20px;
+  }
+  
+  .nav-links a {
+    color: rgba(241, 241, 241, 1);
+  }
+  
+  #contact {
+    cursor: not-allowed;
+  }
+
+  .banner {
+    max-width: 1280px;
+  }
+  
   .shadow > h1 {
     font-size: 36px;
   }
@@ -239,24 +271,109 @@ footer {
     font-size: 18px;
   }
 
-  .about-wrapper > h1 {
-    font-size: 40px;
+  button {
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+  button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgb(0, 0, 0);
   }
 
-  .person-data > h3,
-  p {
+  #about {
+    max-width: 1280px;
+  }
+
+  .about-wrapper > h1 {
+    font-size: 40px;
+    text-align: left;
+    margin-top: 0;
+  }
+
+  .people {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .people > li {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .person-img {
+    padding: 20px;
+  }
+  
+  li:nth-of-type(even) .person-img {
+    display: block;
+    order: 10;
+  }
+  
+  .person-data-left {
+    text-align: left;
+  }
+  
+  .person-data-right > h3, p {
+    text-align: right;
+  }
+
+  .person-data-left, .person-data-right {
+    margin: 45px;
+}
+
+  .person-data > h3, p {
     font-size: 22px;
+    margin: 2% 0;
+  }
+
+  #offer {
+  max-width: 1280px;
+  flex-direction: row;
+  flex-wrap: wrap;
   }
 
   #offer > h1 {
-    font-size: 36px;
+    font-size: 40px;
+    text-align: left;
+    margin: 5%;
+  }
+
+  .service {
+    transition: 0.5s;
+  }
+  .service:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    max-width: 1280px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 71px;
+    margin: 0 auto;
   }
 
   .rights {
-    font-size: 22px;
+    margin-left: 5%;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  
+  .social {
+    color: rgba(255, 255, 255, 1);
+    margin-right: 5%;
+    font-size: 30px;
+    margin-bottom: 0;
+  }
+  
+  .social > i {
+    padding-top: 5px;
   }
 
-  .social {
-    font-size: 40px;
-  }
-}
